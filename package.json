@@ -1,0 +1,18 @@
+{
+  "name": "net.narazaka.vrchat.simple-platform-player-count",
+  "version": "0.1.0",
+  "displayName": "Simple Platform Player Count",
+  "description": "Simple Platform Player Count",
+  "author": {
+    "name": "Narazaka",
+    "url": "https://github.com/Narazaka"
+  },
+  "license": "Zlib",
+  "type": "tool",
+  "url" : "https://github.com/Narazaka/SimplePlatformPlayerCount.git",
+  "vpmDependencies": {
+    "com.vrchat.worlds": ">=3.1.8",
+    "net.narazaka.vrchat.simple-player-count": ">=1.0.0 <2"
+  },
+  "unity": "2019.4"
+}

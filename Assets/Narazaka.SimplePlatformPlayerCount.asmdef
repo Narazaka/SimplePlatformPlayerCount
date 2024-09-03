@@ -1,0 +1,19 @@
+{
+    "name": "Narazaka.SimplePlatformPlayerCount",
+    "rootNamespace": "",
+    "references": [
+        "VRC.Udon",
+        "VRC.Udon.Serialization.OdinSerializer",
+        "UdonSharp.Runtime",
+        "Narazaka.SimplePlatformPlayerCount.PlayerCount"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
