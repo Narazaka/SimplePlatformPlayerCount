@@ -45,7 +45,7 @@ namespace Narazaka.SimplePlatformPlayerCount.PlayerCount
             set
             {
 #if DEBUG_PLAYER_COUNTER
-                Log($"MobilePlayerIds {_MobilePlayerIds.Length} => {value.Length} [{ArrayToString(_MobilePlayerIds)}]");
+                Log($"MobilePlayerIds {_MobilePlayerIds.Length} => {value.Length} [{ArrayToString(_MobilePlayerIds)}] => [{ArrayToString(value)}]");
 #endif
                 _MobilePlayerIds = value;
                 UpdateCounts();
@@ -334,13 +334,12 @@ namespace Narazaka.SimplePlatformPlayerCount.PlayerCount
 
         string ArrayToString(short[] array)
         {
-            var str = "[";
+            var str = "";
             for (var i = 0; i < array.Length; i++)
             {
                 str += array[i];
                 if (i != array.Length - 1) str += ", ";
             }
-            str += "]";
             return str;
         }
 #endif
