@@ -14,5 +14,8 @@
     "com.vrchat.worlds": ">=3.1.8",
     "net.narazaka.vrchat.simple-player-count": ">=1.0.0 <2"
   },
+  "legacyFolders": {
+    "Assets\\SimpleUserCount\\PCQuest": "e9b83dc14150ad14f9611a6b809fc32b"
+  },
   "unity": "2019.4"
 }
