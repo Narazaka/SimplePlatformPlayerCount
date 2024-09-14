@@ -120,6 +120,7 @@ namespace Narazaka.SimplePlatformPlayerCount.PlayerCount
 #endif
             if (IsOwner())
             {
+                CheckCurrentIds();
                 ReRunCheck();
             }
         }
@@ -145,6 +146,33 @@ namespace Narazaka.SimplePlatformPlayerCount.PlayerCount
             }
             CompleteSendCurrentId();
             TrySendNextId();
+        }
+
+        void CheckCurrentIds()
+        {
+            Log($"CheckCurrentIds");
+            var playerCount = VRCPlayerApi.GetPlayerCount();
+            var playerIds = new short[playerCount];
+            var players = new VRCPlayerApi[playerCount];
+            VRCPlayerApi.GetPlayers(players);
+            for (var i = 0; i < playerCount; i++)
+            {
+                playerIds[i] = (short)players[i].playerId;
+            }
+            var len =MobilePlayerIds.Length;
+            var validMobileIds = new short[len];
+            var newIndex = 0;
+            for (var i = 0; i < len; i++)
+            {
+                if (Array.IndexOf(playerIds, MobilePlayerIds[i]) != -1)
+                {
+                    validMobileIds[newIndex] = MobilePlayerIds[i];
+                    newIndex++;
+                }
+            }
+            var newIds = new short[newIndex];
+            Array.Copy(validMobileIds, newIds, newIndex);
+            MobilePlayerIds = newIds;
         }
 
         /// <summary>
