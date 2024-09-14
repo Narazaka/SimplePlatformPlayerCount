@@ -150,7 +150,9 @@ namespace Narazaka.SimplePlatformPlayerCount.PlayerCount
 
         void CheckCurrentIds()
         {
+#if DEBUG_PLAYER_COUNTER
             Log($"CheckCurrentIds");
+#endif
             var playerCount = VRCPlayerApi.GetPlayerCount();
             var playerIds = new short[playerCount];
             var players = new VRCPlayerApi[playerCount];
