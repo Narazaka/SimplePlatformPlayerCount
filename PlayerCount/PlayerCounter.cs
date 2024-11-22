@@ -111,6 +111,7 @@ namespace Narazaka.SimplePlatformPlayerCount.PlayerCount
                 TrySendNextId();
             }
             RemoveMobileId(playerId);
+            CheckCurrentIds();
         }
 
         public override void OnOwnershipTransferred(VRCPlayerApi player)
@@ -161,7 +162,7 @@ namespace Narazaka.SimplePlatformPlayerCount.PlayerCount
             {
                 playerIds[i] = (short)players[i].playerId;
             }
-            var len =MobilePlayerIds.Length;
+            var len = MobilePlayerIds.Length;
             var validMobileIds = new short[len];
             var newIndex = 0;
             for (var i = 0; i < len; i++)
